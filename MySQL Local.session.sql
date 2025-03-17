@@ -20,3 +20,6 @@ CREATE TABLE bills (
     date DATE NOT NULL,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
+
+SELECT * from bills;
+SELECT * from customers;
