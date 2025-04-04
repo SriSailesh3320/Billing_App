@@ -12,7 +12,7 @@
             "name": "MySQL Local",
             "database": "billing_db",
             "username": "root",
-            "password": "SriSailesh@3320",
+            "password": "your-password",
             "connectionTimeout": 30
         }
     ]
