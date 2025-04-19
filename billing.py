@@ -38,7 +38,7 @@ class BillingApp(QWidget):
         # -- Table for Displaying contents. --
         self.data_table = QTableWidget()
         self.data_table.setColumnCount(4)
-        self.data_table.setHorizontalHeaderLabels(["Bill ID", "Customer Name", "Contact", "Amount"])
+        self.data_table.setHorizontalHeaderLabels(["Bill ID","Date", "Customer Name", "Contact", "Amount"])
 
         # -- Adding Widgets to Layout. --
         layout.addWidget(QLabel("Customer Name"))
@@ -105,7 +105,7 @@ class BillingApp(QWidget):
             cursor = db.cursor()
             # -- Query to display the bill and customer tables. --
             query = """
-            SELECT bills.bill_id, customers.name, customers.contact, bills.amount
+            SELECT bills.bill_id, bills.date, customers.name, customers.contact, bills.amount
             FROM bills
             INNER JOIN customers ON bills.customer_id = customers.customer_id
             """
@@ -135,7 +135,7 @@ class BillingApp(QWidget):
 
     
 if __name__ == "__main__":
-    app = QApplication([]) 
-    window = BillingApp() # Billing App class inherited
-    window.show()
-    app.exec()
+    app = QApplication([])   # Creates the application
+    window = BillingApp()    # Creates main window
+    window.show()            # Shows the window
+    app.exec()               # Runs the application
